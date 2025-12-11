@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --dark-gray: rgb(82, 82, 82);
+  --gray: rgb(128, 128, 128);
+  --light-gray: rgb(200, 200, 200);
+  
+  --white-green: #e9f7e5;
+  --lighter-green: #afdaa3;
+  --light-green: #85bb75;
+  --green: #689b59;
+  --dark-green: #56774c;
+  --darker-green: #475c40;
+
+  --transparent-white: #ffffff80;
+  --transparent-white-green: #e9f7e5cc;
+  --transparent-lighter-green: #afdaa3cc;
+  --transparent-light-green: #85bb75cc;
+  --transparent-green: #689b59cc;
+
+  --white-red: #ffdddd;
+  --red: #e40129;
+  --dark-red: #a4132d;
+
+  --gold: #ffd700;
+  --dark-gold: #ac8400;
+}
+
+* {
+  font-family: Montserrat;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

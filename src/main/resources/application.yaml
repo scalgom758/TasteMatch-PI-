@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: tastematch
+
+  # Configuración de base de datos
+  datasource:
+    url: jdbc:mysql://localhost:3306/tastematch_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # Configuración JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+
+  # CONFIGURACIÓN THYMELEAF
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    check-template-location: true
+
+  # Configuración del servidor
+  mvc:
+    static-path-pattern: /static/**
+
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+  # Configuración del servidor
+  server:
+    port: 8080
+    servlet:
+      context-path: /
+
+  # Logging
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
+      org.springframework.web: DEBUG
+      com.proyectofinal.tastematch: DEBUG
