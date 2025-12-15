@@ -23,8 +23,8 @@ public class UsuariosService {
                 throw new RuntimeException("El nombre de usuario '" + usuario.getNombreUsuario() + "' ya está en uso");
             }
 
-            if (usuarioRepository.existsByEmail(usuario.getEmail())) {
-                throw new RuntimeException("El email '" + usuario.getEmail() + "' ya está registrado");
+            if (usuarioRepository.existsByNombreUsuario(usuario.getNombreUsuario())) {
+                throw new RuntimeException("El usuario '" + usuario.getNombreUsuario() + "' ya está registrado");
             }
 
             if (usuario.getFechaRegistro() == null) {
@@ -71,7 +71,7 @@ public class UsuariosService {
                 // Listar todos los usuarios para debug
                 List<Usuarios> todos = usuarioRepository.findAll();
                 System.out.println("📋 Usuarios en BD (" + todos.size() + "):");
-                todos.forEach(u -> System.out.println("   - " + u.getNombreUsuario() + " | " + u.getEmail()));
+                todos.forEach(u -> System.out.println("   - " + u.getNombreUsuario()));
             }
 
             return usuario;
@@ -80,11 +80,6 @@ public class UsuariosService {
             e.printStackTrace();
             return Optional.empty();
         }
-    }
-
-    // Obtener usuario por email
-    public Optional<Usuarios> obtenerUsuarioPorEmail(String email) {
-        return usuarioRepository.findByEmail(email);
     }
 
     // Obtener usuarios por estado
@@ -101,13 +96,7 @@ public class UsuariosService {
                         throw new RuntimeException("El nombre de usuario '" + usuarioActualizado.getNombreUsuario() + "' ya está en uso");
                     }
 
-                    if (!usuario.getEmail().equals(usuarioActualizado.getEmail()) &&
-                            usuarioRepository.existsByEmail(usuarioActualizado.getEmail())) {
-                        throw new RuntimeException("El email '" + usuarioActualizado.getEmail() + "' ya está registrado");
-                    }
-
                     usuario.setNombreUsuario(usuarioActualizado.getNombreUsuario());
-                    usuario.setEmail(usuarioActualizado.getEmail());
                     usuario.setContrasenia(usuarioActualizado.getContrasenia());
                     usuario.setBiografia(usuarioActualizado.getBiografia());
                     usuario.setTipoUsuario(usuarioActualizado.getTipoUsuario());
@@ -155,11 +144,6 @@ public class UsuariosService {
     // Verificar si existe usuario por nombre de usuario
     public boolean existePorNombreUsuario(String nombreUsuario) {
         return usuarioRepository.existsByNombreUsuario(nombreUsuario);
-    }
-
-    // Verificar si existe usuario por email
-    public boolean existePorEmail(String email) {
-        return usuarioRepository.existsByEmail(email);
     }
 
     // Contar total de usuarios

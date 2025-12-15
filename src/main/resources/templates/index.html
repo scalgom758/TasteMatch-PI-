@@ -2,93 +2,93 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bienvenida</title>
-  <link rel="stylesheet" th:href="@{/static/css/global.css}" />
-  <link rel="stylesheet" th:href="@{/static/css/pages/index.css}" />
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bienvenida</title>
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/pages/index.css}"/>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css"/>
 </head>
 
 <body>
 <div class="container" id="container">
-  <div class="header">
-    <div class="logo">
-      <img th:src="@{/static/Images/TasteMatch_logo.png}" />
-    </div>
-  </div>
-
-  <div class="main">
-    <div class="filtered-search">
-      <input type="search" name="searchbar" class="searchbar" id="searchbar"
-             placeholder="Busca por nombre de receta o ingrediente">
-      <button class="search-button">Buscar</button>
-      <select class="food-filter" name="food-filter" id="food-filter">
-        <option selected>Selecciona el filtro</option>
-        <option>Sin gluten</option>
-        <option>Sin lactosa</option>
-        <option>Sin azúcar</option>
-        <option>Vegano/Vegetariano</option>
-        <option>Keto</option>
-      </select>
+    <div class="header">
+        <div class="logo">
+            <img th:src="@{/Images/TasteMatch_logo.png}" alt="Tastematch logo"/>
+        </div>
     </div>
 
-    <div class="recipe-list" th:each="recipe : ${recipes}">
-      <div class="recipe-block">
-        <a th:href="@{/recipe/{id}(id=${recipe.id})}">
-          <img th:src="@{${recipe.image}}" />
-          <h3 th:text="${recipe.title}"></h3>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="nav" id="nav">
-    <div class="icon-menu" id="icon-menu">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-
-    <div class="search">
-      <a th:href="@{/}">
-        <i class="fa-regular fa-magnifying-glass"></i>
-        <p>Buscar</p>
-      </a>
-    </div>
-
-    <div class="account">
-      <a th:href="@{/login}">
-        <i class="fa-regular fa-circle-user"></i>
-        <p>Iniciar sesión</p>
-      </a>
+    <div class="main">
+        <div class="filtered-search">
+            <input type="search" name="searchbar" class="searchbar" id="searchbar"
+                   placeholder="Busca por nombre de receta o ingrediente">
+            <button class="search-button">Buscar</button>
+            <select class="food-filter" name="food-filter" id="food-filter">
+                <option selected>Selecciona el filtro</option>
+                <option>Sin gluten</option>
+                <option>Sin lactosa</option>
+                <option>Sin azúcar</option>
+                <option>Vegano</option>
+                <option>Vegetariano</option>
+                <option>Keto</option>
+            </select>
+        </div>
+        <div class="recipe-list">
+            <div class="recipe-block">
+                <a th:href="@{/recipe-template}">
+                    <img th:src="@{/Images/default_image.png}">
+                    <h3>Recipe title</h3>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <div class="create-recipe">
-      <a th:href="@{/recipes/new}">
-        <i class="fa-regular fa-pencil"></i>
-        <p>Crear receta</p>
-      </a>
+    <div class="nav" id="nav">
+        <div class="icon-menu" id="icon-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="search">
+            <a th:href="@{/}">
+                <i class="fa-regular fa-magnifying-glass"></i>
+                <p>Buscar</p>
+            </a>
+        </div>
+
+        <div class="account">
+            <a th:href="@{/login}">
+                <i class="fa-regular fa-circle-user"></i>
+                <p>Iniciar sesión</p>
+            </a>
+        </div>
+
+        <div class="create-recipe">
+            <a th:href="@{/new-recipe}">
+                <i class="fa-regular fa-pencil"></i>
+                <p>Crear receta</p>
+            </a>
+        </div>
+
+        <div class="favourite-recipes">
+            <a th:href="@{/favourite-recipes}">
+                <i class="fa-regular fa-star"></i>
+                <p>Recetas Favoritas</p>
+            </a>
+        </div>
+
+        <div class="settings">
+            <a th:href="@{/settings}">
+                <i class="fa-regular fa-gear"></i>
+                <p>Ajustes</p>
+            </a>
+        </div>
     </div>
 
-    <div class="favourite-recipes">
-      <a th:href="@{/recipes/favourites}">
-        <i class="fa-regular fa-star"></i>
-        <p>Recetas Favoritas</p>
-      </a>
+    <div class="footer">
+        <p>Bla bla bla info...</p>
     </div>
-
-    <div class="settings">
-      <a th:href="@{/settings}">
-        <i class="fa-regular fa-gear"></i>
-        <p>Ajustes</p>
-      </a>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>Bla bla bla info...</p>
-  </div>
 </div>
-<script th:src="@{/static/js/nav-toggle.js}"></script>
+<script th:src="@{/js/nav-toggle.js}"></script>
 </body>
 
 </html>

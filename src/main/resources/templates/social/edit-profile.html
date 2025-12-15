@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/pages/edit-profile.css" />
+    <title>Editar perfil</title>
+</head>
+
+<body>
+<form action="/profile">
+    <div class="title">
+        <h1>Edita tu perfil</h1>
+    </div>
+
+    <div class="form-container">
+        <div class="username-block">
+            <label for="user" class="form-label">Nombre de usuario</label>
+            <input type="text" id="user" name="user" class="form-input" placeholder="Nuevo nombre de usuario">
+        </div>
+
+        <div class="form-group">
+            <label for="passwd" class="form-label">Contraseña</label>
+            <h5 hidden>La contraseña debe ser de entre 6 y 20 caracteres.</h5>
+            <input type="text" id="passwd" name="passwd" class="form-input" placeholder="Nueva contraseña" min="6"
+                   max="20">
+            <h6 hidden>Formato de constraseña incorrecto</h6>
+        </div>
+
+        <div class="form-group">
+            <label for="confpasswd" class="form-label">Confirmar contraseña</label>
+            <input type="text" id="confpasswd" name="confpasswd" class="form-input"
+                   placeholder="Confirma nueva contraseña" min="6" max="12">
+            <h6 hidden>Las contraseñas no coinciden</h6>
+        </div>
+    </div>
+    <input type="submit" class="register" value="Editar">
+    <button type="button" class="delete" id="delete-account">Eliminar cuenta</button>
+    <div id="modal-remove" class="modal">
+        <div class="modal-content">
+            <i id="close-modal-remove" class="fa-regular fa-xmark"></i>
+            <h3>Eliminar cuenta</h3>
+            <p>¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.</p>
+            <div class="remove-buttons">
+                <button id="cancel-remove" class="cancel-remove">Cancelar</button>
+                <button class="confirm-remove">
+                    <a href="/">Confirmar</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="/js/delete-account.js"></script>
+</body>
+
+</html>

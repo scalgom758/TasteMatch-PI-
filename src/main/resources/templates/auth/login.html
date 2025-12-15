@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesion</title>
-    <link rel="stylesheet" th:href="@{/static/css/global.css}" />
-    <link rel="stylesheet" th:href="@{/static/css/pages/login.css}" />
+    <link rel="stylesheet" th:href="@{/css/global.css}"/>
+    <link rel="stylesheet" th:href="@{/css/pages/login.css}"/>
 </head>
 
 <body>
 <form th:action="@{/login}" method="post">
     <div class="logo">
-        <img th:src="@{/static/Images/TasteMatch_logo.png}" alt="">
+        <img th:src="@{/Images/TasteMatch_logo.png}" alt="">
     </div>
 
     <div class="auth">
@@ -24,21 +24,22 @@
 
     <div class="form-container">
         <div class="form-group">
-            <label for="user" class="form-label">Correo electrónico</label>
-            <input type="text" id="user" name="username" class="form-input" placeholder="example@domain"
-                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-            <h6 hidden>Correo electrónico incorrecto</h6>
+            <label for="user" class="form-label">Nombre de usuario</label>
+            <input type="text" id="user" name="username" class="form-input" placeholder="Escriba su nombre de usuario"
+                   required>
+            <h6 id="user-not-found" hidden th:if="${error == 'user'}">El usuario no existe</h6>
         </div>
 
         <div class="form-group">
             <label for="passwd" class="form-label">Contraseña</label>
             <input type="password" id="passwd" name="password" class="form-input" minlength="6" maxlength="20"
                    placeholder="Escriba su contraseña" required>
-            <h6 hidden>Formato de constraseña incorrecto</h6>
-            <h6 hidden>Contraseña incorrecta</h6>
+            <h6 id="pass-length-error" hidden th:if="${error == 'length'}">La contraseña debe ser de entre 6 y 20 caracteres</h6>
+            <h6 id="pass-wrong-error" hidden th:if="${error == 'wrong'}">Contraseña incorrecta</h6>
         </div>
     </div>
     <input type="submit" class="login" value="Iniciar Sesión">
+    <script th:src="@{/js/auth-errors.js}"></script>
 </form>
 </body>
 

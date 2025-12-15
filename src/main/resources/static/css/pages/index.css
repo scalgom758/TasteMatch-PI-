@@ -1,5 +1,5 @@
 body {
-  background-image: url("../../Images/background.jpg");
+  background-image: url("/Images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -176,7 +176,7 @@ body {
 
 .icon-menu {
   cursor: pointer;
-  width: 17px;
+  width: fit-content;
 }
 
 .icon-menu i {
@@ -273,7 +273,7 @@ body {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 770px) {
   .container {
     grid-template-areas:
       "header"
@@ -305,6 +305,14 @@ body {
     margin-bottom: 0;
     border-radius: 0;
     padding: 0 15px 30px;
+  }
+
+  .search-button {
+    margin: 0;
+  }
+
+  .food-filter {
+    margin: 0;
   }
 
   .logo {
@@ -370,7 +378,7 @@ body {
     width: 16px;
   }
 
-  .nav .icon-menu {
+  .icon-menu {
     display: none;
   }
 

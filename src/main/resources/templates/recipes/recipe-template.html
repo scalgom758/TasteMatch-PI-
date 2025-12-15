@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/pages/recipe-template.css" />
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css" />
+    <title>Receta</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="header">
+            <div class="logo">
+                <img src="/Images/TasteMatch_logo.png" />
+            </div>
+        </div>
+
+        <div class="main">
+            <form action="/">
+                <div class="recipe-menu">
+                    <div class="plate-photo">
+                        <img src="/Images/default_image.png">
+                    </div>
+                    <div class="plate-info">
+                        <h2>Título de la receta</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus augue, eu rhoncus
+                            leo. In commodo consectetur lacus non feugiat. Integer vehicula, felis sed mattis sodales,
+                            odio libero viverra tellus, non blandit sapien metus et tortor. Quisque at sem aliquet,
+                            semper neque sed, hendrerit purus. Ut sed erat luctus metus tincidunt fringilla. Donec
+                            cursus dictum dolor ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius
+                            diam. Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh. Curabitur
+                            efficitur sit amet turpis nec ultrices. Aliquam libero ipsum, venenatis eu venenatis sit
+                            amet, volutpat at tortor. Cras congue felis vel ex pharetra, eu convallis velit fringilla.
+                            Vivamus dignissim gravida malesuada. Integer vel mi eget quam tempus dapibus.
+                        </p>
+                    </div>
+
+                    <div class="ingredients">
+                        <h2>Ingredientes</h2>
+
+                        <div class="diners">
+                            <p>Comensales: x</p>
+                        </div>
+
+                        <div class="labels">
+                            <h4>Etiquetas</h4>
+                            <ul>
+                                <li>Sin lactosa</li>
+                                <li>Sin gluten</li>
+                                <li>Sin azúcar</li>
+                                <li>Vegano/vegetariano</li>
+                                <li>Keto</li>
+                            </ul>
+                        </div>
+
+                        <div class="ingredient-list">
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                            <h3 class="paragraph">Apartado</h3>
+                            <div class="ingredient">
+                                <p>10gr ingrediente</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="steps">
+                        <h2>Pasos</h2>
+                        <div class="time">
+                            <p for="set-time">Tiempo de preparación:</p>
+                            <p>00:00h</p>
+                        </div>
+                        <div class="add-steps">
+                            <ol>
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus
+                                        augue, eu rhoncus leo. In commodo consectetur lacus non feugiat. Integer
+                                        vehicula, felis sed mattis sodales, odio libero viverra tellus, non blandit
+                                        sapien metus et tortor. Quisque at sem aliquet, semper neque sed, hendrerit
+                                        purus. Ut sed erat luctus metus tincidunt fringilla. Donec cursus dictum dolor
+                                        ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius diam.
+                                        Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh.
+                                        Curabitur efficitur sit amet turpis nec ultrices. Aliquam libero ipsum,
+                                        venenatis eu venenatis sit amet, volutpat at tortor. Cras congue felis vel ex
+                                        pharetra, eu convallis velit fringilla. Vivamus dignissim gravida malesuada.
+                                        Integer vel mi eget quam tempus dapibus.
+                                    </p>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus
+                                        augue, eu rhoncus leo. In commodo consectetur lacus non feugiat. Integer
+                                        vehicula, felis sed mattis sodales, odio libero viverra tellus, non blandit
+                                        sapien metus et tortor. Quisque at sem aliquet, semper neque sed, hendrerit
+                                        purus. Ut sed erat luctus metus tincidunt fringilla. Donec cursus dictum dolor
+                                        ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius diam.
+                                        Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh.
+                                        Curabitur efficitur sit amet turpis nec ultrices. Aliquam libero ipsum,
+                                        venenatis eu venenatis sit amet, volutpat at tortor. Cras congue felis vel ex
+                                        pharetra, eu convallis velit fringilla. Vivamus dignissim gravida malesuada.
+                                        Integer vel mi eget quam tempus dapibus.
+                                    </p>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus
+                                        augue, eu rhoncus leo. In commodo consectetur lacus non feugiat. Integer
+                                        vehicula, felis sed mattis sodales, odio libero viverra tellus, non blandit
+                                        sapien metus et tortor. Quisque at sem aliquet, semper neque sed, hendrerit
+                                        purus. Ut sed erat luctus metus tincidunt fringilla. Donec cursus dictum dolor
+                                        ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius diam.
+                                        Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh.
+                                        Curabitur efficitur sit amet turpis nec ultrices. Aliquam libero ipsum,
+                                        venenatis eu venenatis sit amet, volutpat at tortor. Cras congue felis vel ex
+                                        pharetra, eu convallis velit fringilla. Vivamus dignissim gravida malesuada.
+                                        Integer vel mi eget quam tempus dapibus.
+                                    </p>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus
+                                        augue, eu rhoncus leo. In commodo consectetur lacus non feugiat. Integer
+                                        vehicula, felis sed mattis sodales, odio libero viverra tellus, non blandit
+                                        sapien metus et tortor. Quisque at sem aliquet, semper neque sed, hendrerit
+                                        purus. Ut sed erat luctus metus tincidunt fringilla. Donec cursus dictum dolor
+                                        ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius diam.
+                                        Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh.
+                                        Curabitur efficitur sit amet turpis nec ultrices. Aliquam libero ipsum,
+                                        venenatis eu venenatis sit amet, volutpat at tortor. Cras congue felis vel ex
+                                        pharetra, eu convallis velit fringilla. Vivamus dignissim gravida malesuada.
+                                        Integer vel mi eget quam tempus dapibus.
+                                    </p>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus
+                                        augue, eu rhoncus leo. In commodo consectetur lacus non feugiat. Integer
+                                        vehicula, felis sed mattis sodales, odio libero viverra tellus, non blandit
+                                        sapien metus et tortor. Quisque at sem aliquet, semper neque sed, hendrerit
+                                        purus. Ut sed erat luctus metus tincidunt fringilla. Donec cursus dictum dolor
+                                        ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius diam.
+                                        Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh.
+                                        Curabitur efficitur sit amet turpis nec ultrices. Aliquam libero ipsum,
+                                        venenatis eu venenatis sit amet, volutpat at tortor. Cras congue felis vel ex
+                                        pharetra, eu convallis velit fringilla. Vivamus dignissim gravida malesuada.
+                                        Integer vel mi eget quam tempus dapibus.
+                                    </p>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                    <div class="step-photo">
+                                        <img src="/Images/default_image.png" alt="">
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="main-foot">
+                        <input type="submit" class="save-button" value="Guardar">
+                        <div class="like" id="like">
+                            <i class="fa-regular fa-heart"></i>
+                            <p>Me gusta</p>
+                        </div>
+                        <div class="favourite" id="favourite">
+                            <i class="fa-regular fa-star"></i>
+                            <p>Favorito</p>
+                        </div>
+
+                        <div class="report" id="report">
+                            <i class="fa-regular fa-flag"></i>
+                            <p>Reportar</p>
+                        </div>
+
+                        <div id="modal-report" class="modal">
+                            <div class="modal-content">
+                                <i id="close-modal-report" class="fa-regular fa-xmark"></i>
+                                <h3>Reporte</h3>
+                                <select class="report-reason" required>
+                                    <option value="" disabled selected>Selecciona un motivo</option>
+                                    <option value="hate-speech">Discurso de odio</option>
+                                    <option value="innapriopiate-vocabulary">Vocabulario inapropiado</option>
+                                    <option value="irrelevant-content">Contenido irrelevante</option>
+                                    <option value="other">Otro</option>
+                                </select>
+                                <button class="save-report">Reportar</button>
+                            </div>
+                        </div>
+
+                        <div class="remove" id="remove">
+                            <i class="fa-regular fa-trash"></i>
+                            <p>Eliminar</p>
+                        </div>
+
+                        <div id="modal-remove" class="modal">
+                            <div class="modal-content">
+                                <i id="close-modal-remove" class="fa-regular fa-xmark"></i>
+                                <h3>Eliminar</h3>
+                                <div class="remove-buttons">
+                                    <button class="confirm-remove">Confirmar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+            <div class="comment-section">
+                <div class="creator-info">
+                    <img src="/Images/profile-picture.png" alt="">
+                    <div>
+                        <h3>Chef_amigable</h3>
+                        <h4>@Cooker123</h4>
+                    </div>
+                </div>
+                <h3>Comentarios</h3>
+                <div class="comment">
+                    <div class="user-info">
+                        <img src="/Images/profile-picture.png" alt="">
+                        <h4>Chef_extraordinario</h4>
+                    </div>
+                    <div class="comment-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dapibus augue, eu rhoncus
+                            leo. In commodo consectetur lacus non feugiat. Integer vehicula, felis sed mattis sodales,
+                            odio libero viverra tellus, non blandit sapien metus et tortor. Quisque at sem aliquet,
+                            semper neque sed, hendrerit purus. Ut sed erat luctus metus tincidunt fringilla. Donec
+                            cursus dictum dolor ut feugiat. Proin mauris sem, aliquet at velit tristique, finibus varius
+                            diam. Vestibulum in tristique nulla. Donec at molestie ligula, a molestie nibh. Curabitur
+                            efficitur sit amet turpis nec ultrices. Aliquam libero ipsum, venenatis eu venenatis sit
+                            amet, volutpat at tortor. Cras congue felis vel ex pharetra, eu convallis velit fringilla.
+                            Vivamus dignissim gravida malesuada. Integer vel mi eget quam tempus dapibus.
+                        </p>
+                    </div>
+                    <div class="icons">
+                        <i class="fa-regular fa-heart" id="heart-icon"></i>
+                        <i class="fa-regular fa-flag" id="report-icon"></i>
+                        <i class="fa-regular fa-trash" id="remove-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav" id="nav">
+        <div class="icon-menu" id="icon-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="search">
+            <a href="/">
+                <i class="fa-regular fa-magnifying-glass"></i>
+                <p>Buscar</p>
+            </a>
+        </div>
+
+        <div class="account">
+            <a th:href="@{/login}">
+                <i class="fa-regular fa-circle-user"></i>
+                <p>Iniciar sesión</p>
+            </a>
+        </div>
+
+        <div class="create-recipe">
+            <a href="/new-recipe">
+                <i class="fa-regular fa-pencil"></i>
+                <p>Crear receta</p>
+            </a>
+        </div>
+
+        <div class="favourite-recipes">
+            <a href="/favourite-recipes">
+                <i class="fa-regular fa-star"></i>
+                <p>Recetas Favoritas</p>
+            </a>
+        </div>
+
+        <div class="settings">
+            <a href="/settings">
+                <i class="fa-regular fa-gear"></i>
+                <p>Ajustes</p>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Bla bla bla info....</p>
+    </div>
+    </div>
+    <script src="/js/nav-toggle.js"></script>
+    <script src="/js/icons-toggle.js"></script>
+    <script src="/js/modal-toggle.js"></script>
+</body>
+
+</html>

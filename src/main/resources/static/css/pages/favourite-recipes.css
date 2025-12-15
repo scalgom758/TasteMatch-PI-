@@ -1,5 +1,5 @@
 body {
-  background-image: url("../../Images/background.jpg");
+  background-image: url("/Images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -38,7 +38,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   align-self: flex-end;
 }
 
@@ -163,10 +163,12 @@ body {
 
 .icon-menu {
   cursor: pointer;
+  width: fit-content;
 }
 
 .icon-menu i {
   color: var(--black);
+  font-size: larger;
 }
 
 .favourite-recipes p,
@@ -347,7 +349,7 @@ body {
     width: 16px;
   }
 
-  .nav .icon-menu {
+  .icon-menu {
     display: none;
   }
 
@@ -475,7 +477,7 @@ body {
     width: 16px;
   }
 
-  .nav .icon-menu {
+  .icon-menu {
     display: none;
   }
 

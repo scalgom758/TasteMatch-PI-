@@ -11,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class PageController {
 
@@ -19,17 +21,17 @@ public class PageController {
     @Autowired
     private AuthService authService;
 
+
     // Página principal
     @GetMapping("/")
-    public String index() {
-        logger.info("📄 GET / - Página principal");
+    public String index(Model model) {
         return "index";
     }
 
     // ========== LOGIN ==========
 
     @GetMapping("/login")
-    public String showLoginForm(Model model) {
+    public String login(Model model) {
         logger.info("📄 GET /login - Mostrando formulario");
         model.addAttribute("loginRequest", new LoginRequest());
         return "auth/login";
@@ -56,7 +58,7 @@ public class PageController {
     // ========== REGISTRO ==========
 
     @GetMapping("/register")
-    public String showRegisterForm(Model model) {
+    public String register(Model model) {
         logger.info("📄 GET /register - Mostrando formulario");
         model.addAttribute("registerRequest", new RegisterRequest());
         return "auth/register";
@@ -65,9 +67,8 @@ public class PageController {
     @PostMapping("/register")
     public String registerUser(@ModelAttribute RegisterRequest request,
                                Model model) {
-        logger.info("📝 POST /register - Usuario: {}, Email: {}",
-                request.getUsername(), request.getEmail());
-
+        logger.info("📝 POST /register - Usuario: {}",
+                request.getUsername());
         try {
             Usuarios usuario = authService.registrarUsuario(request);
             logger.info("✅ Registro exitoso. ID: {}", usuario.getIdUsuario());
@@ -77,22 +78,32 @@ public class PageController {
             logger.error("❌ Error en registro: {}", e.getMessage());
             model.addAttribute("error", e.getMessage());
             model.addAttribute("username", request.getUsername());
-            model.addAttribute("email", request.getEmail());
             return "auth/register";
         }
     }
 
-    // ========== ENDPOINT DEBUG ==========
+    @GetMapping("/profile")
+    public String profile() {
+        return "social/profile";
+    }
 
-    @GetMapping("/debug")
-    @ResponseBody
-    public String debug() {
-        return "<h1>Debug - TasteMatch</h1>" +
-                "<p>Aplicación funcionando</p>" +
-                "<ul>" +
-                "<li><a href='/'>Home</a></li>" +
-                "<li><a href='/login'>Login</a></li>" +
-                "<li><a href='/register'>Register</a></li>" +
-                "</ul>";
+    @GetMapping("/edit-profile")
+    public String editProfile() {
+        return "social/edit-profile";
+    }
+
+    @GetMapping("/recipe-template")
+    public String recipeTemplate() {
+        return "recipes/recipe-template";
+    }
+
+    @GetMapping("/new-recipe")
+    public String newRecipe() {
+        return "recipes/new-recipe";
+    }
+
+    @GetMapping("/favourite-recipes")
+    public String favouriteRecipes() {
+        return "recipes/favourite-recipes";
     }
 }

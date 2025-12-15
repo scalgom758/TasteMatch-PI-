@@ -21,7 +21,7 @@ public class AuthService {
 
     public Usuarios registrarUsuario(RegisterRequest request) {
         logger.info("🎯 === INICIO REGISTRO ===");
-        logger.info("Usuario: {}, Email: {}", request.getUsername(), request.getEmail());
+        logger.info("Usuario: {}", request.getUsername());
 
         // 1. Validar contraseñas
         if (!request.getPassword().equals(request.getConfirmPassword())) {
@@ -39,15 +39,10 @@ public class AuthService {
             logger.error("❌ Usuario ya existe: {}", request.getUsername());
             throw new RuntimeException("El nombre de usuario ya está en uso");
         }
-        if (usuariosService.existePorEmail(request.getEmail())) {
-            logger.error("❌ Email ya registrado: {}", request.getEmail());
-            throw new RuntimeException("El email ya está registrado");
-        }
 
         // 4. Crear usuario
         Usuarios usuario = new Usuarios();
         usuario.setNombreUsuario(request.getUsername());
-        usuario.setEmail(request.getEmail());
 
         // 5. Encriptar contraseña
         String encryptedPassword = securityService.encryptPassword(request.getPassword());

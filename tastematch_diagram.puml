@@ -1,0 +1,137 @@
+@startuml
+' Clase Usuarios
+class Usuarios {
+    - idUsuario : Long
+    - nombreUsuario : String
+    - contrasenia : String
+    - biografia : String
+    - fechaRegistro : LocalDate
+    - tipoUsuario : TipoUsuario
+    - estado : EstadoUsuario
+
+    + Usuarios()
+    + Usuarios(nombreUsuario: String, contrasenia: String)
+    + getIdUsuario() : Long
+    + setIdUsuario(idUsuario: Long)
+    + getNombreUsuario() : String
+    + setNombreUsuario(nombreUsuario: String)
+    + getContrasenia() : String
+    + setContrasenia(contrasenia: String)
+    + getBiografia() : String
+    + setBiografia(biografia: String)
+    + getFechaRegistro() : LocalDate
+    + setFechaRegistro(fechaRegistro: LocalDate)
+    + getTipoUsuario() : TipoUsuario
+    + setTipoUsuario(tipoUsuario: TipoUsuario)
+    + getEstado() : EstadoUsuario
+    + setEstado(estado: EstadoUsuario)
+}
+
+enum TipoUsuario {
+    ADMIN
+    REGISTERED
+}
+
+enum EstadoUsuario {
+    ACTIVE
+    SUSPENDED
+}
+
+' Clase Recetas
+class Recetas {
+    - idReceta : Long
+    - usuario : Usuarios
+    - titulo : String
+    - descripcion : String
+    - comensales : Integer
+    - categoria : Categoria
+    - tiempo : LocalTime
+    - fechaCreacion : LocalDate
+    - estado : EstadoReceta
+    - ingredientes : List<Ingredientes>
+
+    + Recetas()
+    + Recetas(usuario: Usuarios, titulo: String, descripcion: String, comensales: Integer, categoria: Categoria, tiempo: LocalTime)
+    + getIdReceta() : Long
+    + setIdReceta(idReceta: Long)
+    + getUsuario() : Usuarios
+    + setUsuario(usuario: Usuarios)
+    + getTitulo() : String
+    + setTitulo(titulo: String)
+    + getDescripcion() : String
+    + setDescripcion(descripcion: String)
+    + getComensales() : Integer
+    + setComensales(comensales: Integer)
+    + getCategoria() : Categoria
+    + setCategoria(categoria: Categoria)
+    + getTiempo() : LocalTime
+    + setTiempo(tiempo: LocalTime)
+    + getFechaCreacion() : LocalDate
+    + setFechaCreacion(fechaCreacion: LocalDate)
+    + getEstado() : EstadoReceta
+    + setEstado(estado: EstadoReceta)
+    + getIngredientes() : List<Ingredientes>
+    + setIngredientes(ingredientes: List<Ingredientes>)
+}
+
+enum Categoria {
+    LACTOSE
+    GLUTEN
+    SUGAR
+    VEGAN
+    VEGETARIAN
+    KETO
+}
+
+enum EstadoReceta {
+    ACTIVE
+    SUSPENDED
+}
+
+' Clase Ingredientes
+class Ingredientes {
+    - idIngrediente : Long
+    - receta : Recetas
+    - nombre : String
+    - apartado : String
+    - cantidad : BigDecimal
+    - medida : Medida
+
+    + Ingredientes()
+    + Ingredientes(receta: Recetas, nombre: String, apartado: String, cantidad: BigDecimal, medida: Medida)
+    + getIdIngrediente() : Long
+    + setIdIngrediente(idIngrediente: Long)
+    + getReceta() : Recetas
+    + setReceta(receta: Recetas)
+    + getNombre() : String
+    + setNombre(nombre: String)
+    + getApartado() : String
+    + setApartado(apartado: String)
+    + getCantidad() : BigDecimal
+    + setCantidad(cantidad: BigDecimal)
+    + getMedida() : Medida
+    + setMedida(medida: Medida)
+}
+
+enum Medida {
+    MILILITROS
+    LITROS
+    GRAMOS
+    KILOS
+    CUCHARADAS
+    CUCHARADITAS
+    TAZAS
+    UNIDADES
+    PIZCAS
+    PUÑADOS
+}
+
+' Relaciones
+Usuarios "1" --> "*" Recetas : usuario
+Recetas "1" --> "*" Ingredientes : ingredientes
+Recetas --> Categoria
+Recetas --> EstadoReceta
+Ingredientes --> Medida
+Usuarios --> TipoUsuario
+Usuarios --> EstadoUsuario
+@enduml

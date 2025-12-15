@@ -16,14 +16,11 @@ public class Usuarios {
     @Column(name = "nombre_usuario", nullable = false, unique = true, length = 50)
     private String nombreUsuario;
 
-    @Column(name = "email", nullable = false, unique = true, length = 50)
-    private String email;
-
     @Column(name = "contrasenia", nullable = false, length = 100)
     @JsonProperty("contrasenia")
     private String contrasenia;
 
-    @Column(name = "biografia")
+    @Column(name = "biografia", columnDefinition = "TEXT")
     private String biografia = null;
 
     @Column(name = "fecha_registro", nullable = false)
@@ -50,9 +47,8 @@ public class Usuarios {
     public Usuarios() {
     }
 
-    public Usuarios(String nombreUsuario, String email, String contrasenia) {
+    public Usuarios(String nombreUsuario, String contrasenia) {
         this.nombreUsuario = nombreUsuario;
-        this.email = email;
         this.contrasenia = contrasenia;
     }
 
@@ -71,14 +67,6 @@ public class Usuarios {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getContrasenia() {
@@ -126,7 +114,6 @@ public class Usuarios {
         return "Usuarios{" +
                 "idUsuario=" + idUsuario +
                 ", nombreUsuario='" + nombreUsuario + '\'' +
-                ", email='" + email + '\'' +
                 ", biografia='" + biografia + '\'' +
                 ", fechaRegistro=" + fechaRegistro +
                 ", tipoUsuario=" + tipoUsuario +

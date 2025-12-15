@@ -1,5 +1,5 @@
 body {
-  background-image: url("../../Images/background.jpg");
+  background-image: url("/Images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -38,7 +38,7 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   align-self: flex-end;
 }
 
@@ -60,13 +60,6 @@ body {
   border-bottom-right-radius: 30px;
 }
 
-.user {
-  margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .default-pfp {
   width: 100px;
   border: 1px solid var(--green);
@@ -85,11 +78,18 @@ body {
     "pfp username desc"
     "pfp username desc";
   grid-template-columns: 1fr 1fr 4fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-picture {
   grid-area: pfp;
-  justify-self: end;
+  align-items: center;
+}
+
+.profile-picture label {
+  display: flex;
 }
 
 .username {
@@ -122,7 +122,7 @@ body {
   border: 0;
   cursor: pointer;
   border-radius: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
   transition: 0.1s;
   font-size: 14px;
 }
@@ -243,10 +243,12 @@ body {
 
 .icon-menu {
   cursor: pointer;
+  width: fit-content;
 }
 
 .icon-menu i {
   color: var(--black);
+  font-size: larger;
 }
 
 .account p,
@@ -427,7 +429,7 @@ body {
     width: 16px;
   }
 
-  .nav .icon-menu {
+  .icon-menu {
     display: none;
   }
 

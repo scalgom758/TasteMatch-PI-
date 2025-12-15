@@ -1,5 +1,5 @@
 body {
-  background-image: url("../../Images/background.jpg");
+  background-image: url("/Images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -38,7 +38,7 @@ body {
 .logo {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 .logo img {
@@ -50,7 +50,7 @@ body {
 
 .main {
   grid-area: main;
-  padding: 0 40px;
+  padding: 30px 40px;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -65,21 +65,26 @@ body {
 
 .recipe-menu {
   display: grid;
-  grid-template-areas: 
-  "plate-photo plate-info"
-  "ingredients steps"
-  "main-buttons main-buttons";
-  grid-template-columns: 310px 700px;
+  grid-template-areas:
+    "plate-photo plate-info"
+    "ingredients steps"
+    "main-buttons main-buttons";
+  grid-template-columns: 310px auto;
   grid-template-rows: 0.5fr auto;
   gap: 50px;
   justify-items: center;
 }
 
-.main input:not(.save-button),
+.main input:not(.save-button, .ingredient input),
 .main textarea {
   background-color: var(--lighter-green);
   border: 1px solid var(--green);
   border-radius: 10px;
+}
+
+.main input:not(.save-button),
+.main textarea {
+  outline: none;
 }
 
 .introduction {
@@ -96,7 +101,6 @@ body {
   border: 1px solid var(--dark-green);
   border-radius: 20px;
   width: 300px;
-  height: 220px;
 }
 
 .plate-photo label {
@@ -242,13 +246,44 @@ body {
   color: var(--darker-green);
 }
 
+.ingredient {
+display:inline-block
+}
+
+.ingredient input, select {
+  border: 1px solid var(--green);
+  background-color: var(--lighter-green);
+}
+
+.ingredient select {
+  outline: none;
+}
+
+.amount {
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 40px;
+}
+
+.measure {
+  border-left: none;
+  border-right: none;
+}
+
+.ingredient-input {
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 .ingredient,
 .paragraph {
   margin-bottom: 10px;
 }
 
 .ingredient input {
-  padding: 2px;
+  padding: 4px;
 }
 
 .paragraph {
@@ -257,7 +292,7 @@ body {
 
 .paragraph input {
   font-size: 0.9em;
-  padding: 3px;
+  padding: 6px;
 }
 
 .ingredient button,
@@ -313,7 +348,8 @@ body {
   margin-bottom: 20px;
 }
 
-.add-steps textarea {
+.step-desc {
+  display: flex;
   font-size: 0.9em;
   resize: none;
   width: 600px;
@@ -338,15 +374,17 @@ body {
 }
 
 .step-photo {
+  display: inline-flex;
   margin-top: 10px;
+  margin-right: 20px;
   background-color: var(--transparent-lighter-green);
   text-align: center;
   align-items: center;
   padding: 10px;
   border: 1px solid var(--green);
   border-radius: 10px;
-  width: 170px;
-  height: 130px;
+  width: 150px;
+  height: 100px;
 }
 
 .step-photo label {
@@ -470,10 +508,12 @@ body {
 
 .icon-menu {
   cursor: pointer;
+  width: fit-content;
 }
 
 .icon-menu i {
   color: var(--black);
+  font-size: larger;
 }
 
 .create-recipe p,
